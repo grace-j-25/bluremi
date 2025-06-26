@@ -25,7 +25,9 @@
         <div class="leaf2"></div>
         <div class="leaf3"></div>
         <div class="playbtn">
-            <audio id="audio" src="img/Prologue - Long Roads (프롤로그 - 먼길).mp4"controls></audio>
+            <audio id="audio" src="img/Prologue - Long Roads (프롤로그 - 먼길).mp4" loop></audio>
+            <img id="playBtn" src="img/btn_play.png" alt="재생">
+            <img id="pauseBtn" src="img/btn_pause.png" alt="일시정지">
         </div>
         <div class="text">
             <ul>
@@ -43,6 +45,32 @@
             </ul>
         </div>
     </div>
+
+    <script>
+        // 재생 버튼
+playBtn.addEventListener('click', function() {
+    audio.play();
+    audio.muted = false;
+    playBtn.style.display = 'none';
+    pauseBtn.style.display = 'block';
+    pauseBtn.classList.add('pulse'); // 재생 시 애니메이션 추가
+});
+
+// 일시정지 버튼
+pauseBtn.addEventListener('click', function() {
+    audio.pause();
+    pauseBtn.style.display = 'none';
+    playBtn.style.display = 'block';
+    pauseBtn.classList.remove('pulse'); // 정지 시 애니메이션 제거
+});
+
+// 음악이 끝나면 버튼 초기화
+audio.addEventListener('ended', function() {
+    pauseBtn.style.display = 'none';
+    playBtn.style.display = 'block';
+    pauseBtn.classList.remove('pulse'); // 음악 끝나면 애니메이션 제거
+});
+    </script>
 
 </body>
 </html>
