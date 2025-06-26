@@ -32,9 +32,9 @@ header nav .gnb li{font-size: 24px;}
 header nav .gnb li a {color: #004706;padding: 25px;display: block;padding: 25px;}
 
 #visual .playbtn{position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);}
-#visual .playbtn img{cursor: pointer;}
-#visual .playbtn img#play_btn{cursor: pointer;}
-#visual .playbtn img#pause_btn{display: none;}
+#visual .playbtn #playBtn img{cursor: pointer;}
+#visual .playbtn img#playBtn{cursor: pointer;}
+#visual .playbtn img#pauseBtn{display: none;}
 
 #visual .text {width: 350px; height: 500px; color: #fff;font-family: 'Pretendard-Regular';
     position: absolute;
